@@ -1,638 +1,349 @@
 ---
-# You can also start simply with 'default'
-theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://cover.sli.dev
-# some information about your slides (markdown enabled)
-title: Welcome to Slidev
-info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# apply unocss classes to the current slide
-class: text-center
-# https://sli.dev/features/drawing
-drawings:
-  persist: false
-# slide transition: https://sli.dev/guide/animations.html#slide-transitions
-transition: slide-left
-# enable MDC Syntax: https://sli.dev/features/mdc
-mdc: true
-# open graph
-# seoMeta:
-#  ogImage: https://cover.sli.dev
+theme: dracula
 ---
 
-# Welcome to Slidev
+# 生成AIとエンジニアの仕事と私~実践知を添えて~
 
-Presentation slides for developers
-
-<div @click="$slidev.nav.next" class="mt-12 py-1" hover:bg="white op-10">
-  Press Space for next page <carbon:arrow-right />
-</div>
-
-<div class="abs-br m-6 text-xl">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="slidev-icon-btn">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
-    <carbon:logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
+2025/06/13 【ORION × スマレジ共催】生成AI時代に考えるエンジニアのキャリア会議
 
 ---
-transition: fade-out
+layout: author
 ---
 
-# What is Slidev?
+![icon](./images/icon.png)
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+## いずりょー / is_ryo 
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - themes can be shared and re-used as npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embed Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export to PDF, PPTX, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - virtually anything that's possible on a webpage is possible in Slidev
-<br>
-<br>
+#EngineeringManager@Sprocket
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+#TypeScriptが好き #JavaScriptは嫌い
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
+#kansai.ts Organizer
 
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
+#フロントエンドカンファレンス関西実行委員
 
-<!--
-Here is another comment.
--->
+X → @is_ryo
 
 ---
-transition: slide-up
-level: 2
+layout: section
 ---
 
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/ui#navigation-bar)
-
-## Keyboard Shortcuts
-
-|                                                     |                             |
-| --------------------------------------------------- | --------------------------- |
-| <kbd>right</kbd> / <kbd>space</kbd>                 | next animation or slide     |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd>                                       | previous slide              |
-| <kbd>down</kbd>                                     | next slide                  |
-
-<!-- https://sli.dev/guide/animations.html#click-animation -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+# 生成AI活用してますか？
 
 ---
-layout: two-cols
-layoutClass: gap-16
 ---
 
-# Table of contents
+# 簡単にアンケート取りたい
 
-You can use the `Toc` component to generate a table of contents for your slides:
+<div text-2xl>
 
-```html
-<Toc minDepth="1" maxDepth="1" />
-```
+1. あまり活用できていない…
 
-The title will be inferred from your slide content, or you can override it with `title` and `level` in your frontmatter.
+2. 少し質問するくらいで使っている
 
-::right::
+3. 開発業務に取り入れている(Copilot, Clineなど)
 
-<Toc text-sm minDepth="1" maxDepth="2" />
+4. それ以外の業務にも取り入れている(資料作成など)
 
----
-layout: image-right
-image: https://cover.sli.dev
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover!
-
-```ts [filename-example.ts] {all|4|6|6-7|9|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="342" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-
-[Learn more](https://sli.dev/features/line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
----
-
-# Components
-
-<div grid="~ cols-2 gap-4">
-<div>
-
-You can use Vue components directly inside your slides.
-
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
-
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
----
-
-# Clicks Animations
-
-You can add `v-click` to elements to add a click animation.
-
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
+5. 生成AIないと生きていけないっ！！！(仕事できない)
 
 </div>
 
 ---
+---
 
-# Motions
+# ちなみに私は…
 
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
+<div text-2xl>
 
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
+1. あまり活用できていない…
 
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
+2. 少し質問するくらいで使っている
 
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
+3. 開発業務に取り入れている(Copilot, Clineなど)
 
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
+4. それ以外の業務にも取り入れている(資料作成など)
 
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
+<div font-bold underline>5. 生成AIないと生きていけないっ！！！(仕事できない)</div>
 
 </div>
 
----
+<br />
 
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
+<div font-bold text-4xl >
+生成AI取り上げられたらエンジニア辞めちゃうんじゃないかというくらい、生成AIが仕事と強く依存している
 </div>
 
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
 ---
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
 ---
 
-# Draggable Elements
+# 弊社の生成AI事情
 
-Double-click on the draggable elements to edit their positions.
+<div text-2xl>
 
-<br>
+- <div leading-relaxed>主にClaude、Geminiを利用している</div>
 
-###### Directive Usage
+  - <div leading-relaxed>エンジニアだけでなく非エンジニアも一定数活用している</div>
 
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
+  - <div leading-relaxed>エンジニアはRooCode、ClaudeCodeとか、非エンジニアはClaudeのWebアプリとか</div>
 
-<br>
+  - <div leading-relaxed>ClaudeProjectを活用して生成AIアプリみたいなものを作っている</div>
 
-###### Component Usage
+- <div leading-relaxed>コーディング作業はすべてRooCodeに任せるべく試行錯誤中</div>
 
-```md
-<v-drag text-3xl>
-  <div class="i-carbon:arrow-up" />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
+- <div leading-relaxed>Devinにより技術的負債の解消を実験的に行っている</div>
 
-<v-drag pos="663,206,261,_,-15">
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
+- <div leading-relaxed>社内外向けに生成AIエージェントの開発をしている</div>
 
-<img v-drag="'square'" src="https://sli.dev/logo.png">
+  - <div leading-relaxed>社内向けは割と実験場として好き勝手やっている</div>
 
-###### Draggable Arrow
+  - <div leading-relaxed>生成AIプロダクトの開発を進めている</div>
 
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-src: ./pages/imported-slides.md
-hide: false
----
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
+</div>
 
 ---
 layout: center
-class: text-center
 ---
 
-# Learn More
+<div font-bold text-5xl leading-relaxed>今日は私自身の経験談からお話します。<br />※すべて個人の意見です。</div>
 
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
+---
+layout: center
+---
 
-<PoweredBySlidev mt-10 />
+<div font-bold text-5xl leading-relaxed>エンジニアとしての仕事が<br/>どう変わったか？</div>
+
+---
+---
+
+# エンジニアとしての仕事がどう変わったか？
+
+<div text-2xl>
+
+1. コードを(ほぼ)書かなくなった
+
+2. レビューの時間が減った
+
+3. 設計も生成AIとやるようになった
+
+4. 新しい知見を生成AI経由で得るようになった
+
+5. 生成AIをどう活用すると効果的か考えることに時間を使うようになった
+
+</div>
+
+---
+---
+
+# コードを(ほぼ)書かなくなった
+
+<div text-2xl>
+
+- <div leading-relaxed>何よりアウトプットを出す速度が早すぎるので、コードを書くという作業は人間がやる必要がなくなった</div>
+
+- <div leading-relaxed>最初は一つの関数とかテストとか一部のコードを書いてもらう程度だったが、この半年でかなり賢くなったので、もうアプリケーション丸ごと任せられるくらいになっている</div>
+
+- <div leading-relaxed>エンジニアじゃなくてもPoCレベルのアプリケーション作れちゃう世界が来ている</div>
+
+  - <div leading-relaxed>例) 弊社のPdMは非エンジニアだが、週に1,2個くらいプロトタイプ作ることが可能になっていた</div>
+
+</div>
+
+---
+---
+
+# レビューの時間が減った
+
+<div text-2xl>
+
+- <div leading-relaxed>一次レビューは生成AIに任せるようになってきた</div>
+
+- <div leading-relaxed>ある意味機械的に判断できるような指摘内容は生成AIがしてくれるので、その前提で人間がレビューできるようになった</div>
+
+  - <div leading-relaxed>BiomeでLintとFormatして生成AIでの一次レビューが通ってから、人間がレビューする</div>
+
+- <div leading-relaxed>コード規約や設計思想など、開発組織で定めているルールをコンテキストとして生成AIに渡して、どういう観点でレビューしてほしいかをプロンプトで書いて、チューニングしてを繰り返している</div>
+
+- <div leading-relaxed>これがプロンプト芸、否、プロンプトエンジニアリングか…となっている</div>
+
+</div>
+
+---
+---
+
+# 設計も生成AIとやるようになった
+
+<div text-2xl>
+
+- <div leading-relaxed>アプリケーションの設計も生成AIとやるようになった</div>
+
+- <div leading-relaxed>まず設計書に重要なことを書いて、生成AIに校閲してもらう</div>
+
+- <div leading-relaxed>インターネットに転がっているプラクティスを参照して、様々なパターンを提案してくれる。しかも非現実的な速度で…</div>
+
+- <div leading-relaxed>生成AIに設計書を作らせて、それを次のタスクに渡してアプリケーションを実装させることをよくやっている</div>
+
+</div>
+
+---
+---
+
+# 新しい知見を生成AI経由で得るようになった
+
+<div text-2xl>
+
+- <div leading-relaxed>先程の話にもつながるが、ふとしたタイミングで自分の知らない知見を得る機会が増えた</div>
+
+  - <div leading-relaxed>新しい言語やフレームワークなどの知見</div>
+
+  - <div leading-relaxed>クラウドサービスなどのアップデート情報</div>
+
+- <div leading-relaxed>半年前に比べて生成AIが参照できる情報の鮮度・精度が上がってきている</div>
+
+  - <div leading-relaxed>Web検索するのが当たり前になってきた</div>
+
+</div>
+
+---
+---
+
+# 生成AIをどう活用すると効果的か考えることに時間を使うようになった
+
+<div text-2xl>
+
+- <div leading-relaxed>人間の生産性は生成AIによって爆発的に向上した</div>
+
+- <div leading-relaxed>が、生成AI自体の生産性ももっと上げられると掛け算的に全体的な生産性が向上できそう</div>
+
+- <div leading-relaxed>ということで生成AIの生産性みたいなことを考えるようになってきた</div>
+
+- <div leading-relaxed>プロンプトでどんな情報を投げるか、どこまでのコンテキストを持たせておくべきかみたいなことを考えながら試行錯誤している</div>
+  
+</div>
+
+---
+layout: center
+---
+
+<div font-bold text-5xl leading-relaxed>これからどういう<br />エンジニアが求められるか</div>
+
+---
+---
+
+# エンジニアとしての仕事がどう変わったか？
+
+<div text-2xl>
+
+1. コーディング力よりも設計力
+
+2. 高い表現能力、言語化能力
+
+3. 生成AIを活用した業務・組織設計力
+
+4. 生成AIについての高い理解度
+
+</div>
+
+---
+---
+
+# コーディング力よりも設計力
+
+<div text-2xl>
+
+- <div leading-relaxed>コードを書く能力では勝てない…ので任せた方がいい</div>
+
+  - <div leading-relaxed>うまく対応できない言語、フレームワークはあるが、大半はうまく対応してくれる</div>
+
+- <div leading-relaxed>ただ生成AIは自立して何もないところから生み出すことはできない</div>
+
+  - <div leading-relaxed>何かしらのトリガーがないと動き出さない</div>
+  
+  - <div leading-relaxed>人間がどんなアウトプットを期待しているのかを伝えてあげないといけない</div>
+
+- <div leading-relaxed>生成AIにどんなものを作って欲しいのかという情報を、曖昧さを可能な限り排除した上でプロンプトを投げられるようにならないといけない</div>
+
+</div>
+
+---
+---
+
+# 高い表現能力、言語化能力
+
+<div text-2xl>
+
+- <div leading-relaxed>生成AIは人間から渡されたプロンプトから、期待されるアウトプットを生成してくれる</div>
+
+  - <div leading-relaxed>要するに入力として渡すプロンプトの質が重要</div>
+
+- <div leading-relaxed>プロンプトの質を上げるためには極論「生成AIが毎回同じ理解をしてくれるような明確な情報、曖昧さを排除した情報」を書く必要がある</div>
+
+  - <div leading-relaxed>期待するアウトプットについてうまく表現、言語化できないといけない</div>
+
+  - <div leading-relaxed>プロンプトの質で生成AIのアウトプットの質が大きく変わってくる</div>
+</div>
+
+---
+---
+
+# 生成AIを活用した業務・組織設計力
+
+<div text-2xl>
+
+- <div leading-relaxed>ただ生成AIを使うだけでなく、業務や組織に組み込むようなアクションが取れると、組織として強くなれる可能性がある</div>
+
+  - <div leading-relaxed>エンジニアの作業を代行する生成AIエージェントを作る</div>
+
+  - <div leading-relaxed>コーディング業務はもうDevinやClaudeCodeActionに任せて非同期で作業させる</div>
+
+- <div leading-relaxed>これはマネジメント領域に関わってくるかも知れないが、マネージャーでなくても生成AIの力で組織設計の一端を担うことができるという可能性がある</div>
+
+  - <div leading-relaxed>生成AIを活用した組織としての生産性向上の施策を考えている</div>
+
+</div>
+
+---
+---
+
+# 生成AIについての高い理解度
+
+<div text-2xl>
+
+- <div leading-relaxed>生成AIはどんな仕組みで動いていて、どういう設計思想で設計されていて、何ができて何ができないのか、何が得意で何が不得意なのかなど知っていると、生成AIを活用できるレベルがグッと上がる</div>
+
+- <div leading-relaxed>書籍、論文、できる人とのコミュニケーション、まずは使ってみるなどでどんどん知見、経験値を貯めにいった方がいい</div>
+
+  - <div leading-relaxed>書籍は原理原則を説明しているようなものがおすすめ</div>
+
+  - <div leading-relaxed>ユースケースの紹介みたいなものはすぐに陳腐化してしまう</div>
+
+</div>
+
+---
+---
+
+# まとめ
+
+<div text-2xl>
+
+- <div leading-relaxed>生成AIはエンジニアの仕事をなくすものではなく、変えるもの</div>
+
+- <div leading-relaxed>怖がって近寄らないのではなくて、寄り添っていこう</div>
+
+- <div leading-relaxed>相手(生成AI)のことを知って、どんな言葉を届けるとより良い仕事をしてくれるのかを考えてあげよう</div>
+
+  - <div leading-relaxed>人間関係と近しいものがある</div>
+
+- <div leading-relaxed>これからエンジニアの仕事や価値というのはどんどん変わっていくだろうし、その波に乗れる気持ちを持っておくことが大事</div>
+
+  - <div leading-relaxed>乗るしかない、このビックウェーブに…</div>
+
+- <div leading-relaxed font-bold>今回は表面的な話に絞ったので、もっと深い話をしたい！なので懇親会で話しましょう！</div>
+
+</div>
+
+---
+layout: center
+---
+
+<div font-bold text-5xl leading-relaxed>Thanks!!!</div>
